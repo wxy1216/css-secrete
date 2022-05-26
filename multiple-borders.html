@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="multi">
+        多重边框+投影
+    </div>
+    <div id="outline">
+        多重边框+outline投影
+    </div>
+</body>
+<style>
+    /**
+    * Multiple borders
+    */
+    div {
+        width: 100px;
+        height: 60px;
+        margin: 25px;
+    }
+
+    #multi {
+        background: yellowgreen;
+        box-shadow: 0 0 0 10px #655,
+            0 0 0 15px deeppink,
+            0 2px 5px 15px rgba(0, 0, 0, .6);
+    }
+
+    #outline {
+        background: yellowgreen;
+        /*border使div变宽 位置有移动*/
+        border: 10px solid #655;
+        outline: 5px solid deeppink;
+        /* 裁边效果 */
+        /* outline-offset: -5px; */
+    }
+</style>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="background-position">Code Pirate</div>
+    <div id="background-origin">Code Pirate</div>
+    <div id="calc">Code Pirate</div>
+</body>
+<style>
+    /**
+    * Flexible background positioning
+    * via extended background-position
+    */
+
+    div {
+        /* Styling */
+        max-width: 10em;
+        min-height: 5em;
+        padding: 10px;
+        color: white;
+        font: 100%/1 sans-serif;
+        background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat bottom right #58a;
+    }
+
+    #background-position {
+        background-position: right 20px bottom 10px;
+    }
+
+    #background-origin {
+        /* 与padding宽度相同 */
+        background-origin: content-box;
+    }
+
+    #calc {
+        background-position: calc(100% - 20px) calc(100% - 10px);
+    }
+</style>
