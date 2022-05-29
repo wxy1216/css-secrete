@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="outline" class="basic">
+        I have a nice subtle inner rounding, don’t I look pretty?
+    </div>
+    <div class="outter">
+        <div class="basic">
+            I have a nice subtle inner rounding, don’t I look pretty?
+        </div>
+    </div>
+</body>
+<style>
+    /**
+    * Inner rounding
+    */
+    .basic {
+
+        max-width: 10em;
+        border-radius: .8em;
+        padding: 1em;
+        margin: 1em;
+        background: tan;
+        font: 100%/1.5 sans-serif;
+    }
+
+    #outline {
+        outline: .6em solid #655;
+        box-shadow: 0 0 0 .4em #655;
+        /* todo calculate max of this */
+        /* 但现在描边outline跟着radius走？？？并不是只有内圆角 */
+    }
+
+    .outter {
+        background: #655;
+        padding: .8em;
+        max-width: 12em;
+    }
+</style>
