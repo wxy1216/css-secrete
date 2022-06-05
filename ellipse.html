@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div class="ellipse">
+    </div>
+    <div class="half">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="quarter">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+
+</html>
+<style>
+    .half div,
+    .quarter div,
+    .ellipse {
+        width: 16em;
+        height: 10em;
+        background: #fb3;
+        margin: 1em;
+        display: inline-block;
+    }
+
+    .ellipse {
+        border-radius: 50%;
+    }
+
+    .half div:nth-of-type(1) {
+        /* 水平/垂直 */
+        border-radius: 50% / 100% 100% 0 0;
+    }
+
+    .half div:nth-of-type(2) {
+        border-radius: 50% / 0 0 100% 100%;
+    }
+
+    .half div:nth-of-type(3) {
+        border-radius: 100% 0 0 100% / 50%;
+    }
+
+    .half div:nth-of-type(4) {
+        border-radius: 0 100% 100% 0 / 50%;
+    }
+
+    .quarter div:nth-of-type(1) {
+        border-radius: 100% 0 0 0;
+    }
+
+    .quarter div:nth-of-type(2) {
+        border-radius: 0 100% 0 0;
+    }
+
+    .quarter div:nth-of-type(3) {
+        border-radius: 0 0 100% 0;
+    }
+
+    .quarter div:nth-of-type(4) {
+        border-radius: 0 0 0 100%;
+    }
+</style>
