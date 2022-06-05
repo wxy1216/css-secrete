@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div class="themedBorder">
+        Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage
+        beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola
+        ribeye biltong landjaeger. Chuck pork belly sed sausage
+    </div>
+    <div class="borderImage">
+        Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage
+        beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola
+        ribeye biltong landjaeger. Chuck pork belly sed sausage
+    </div>
+</body>
+
+</html>
+<style>
+    div {
+        padding: 1em;
+        border: 1em solid transparent;
+
+        max-width: 20em;
+        font: 100%/1.6 Baskerville, Palatino, serif;
+    }
+
+    .themedBorder {
+        /* 通过背景设置出边框 */
+        background: linear-gradient(white, white) padding-box,
+            repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%,
+                #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;
+    }
+
+    .borderImage {
+        border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em,
+                #58a 0, #58a 3em, transparent 0, transparent 4em);
+    }
+</style>
