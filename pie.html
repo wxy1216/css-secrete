@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="pie"></div>
+    <div class="static">0%</div>
+    <div class="static" style="animation-delay: -20s;">20%</div>
+    <div class="static" style="animation-delay: -40s;">40%</div>
+    <div class="static" style="animation-delay: -60s;">60%</div>
+    <div class="static" style="animation-delay: -80s;">80%</div>
+</body>
+
+</html>
+<style>
+    .pie {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: yellowgreen;
+        background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+        color: #655;
+    }
+
+    .pie::before {
+        content: '';
+        display: block;
+        margin-left: 50%;
+        height: 100%;
+        border-radius: 0 100% 100% 0 / 50%;
+        background-color: inherit;
+        transform-origin: left;
+        animation: spin 3s linear infinite, bg 6s step-end infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(.5turn);
+        }
+    }
+
+    @keyframes bg {
+        50% {
+            background: #655;
+        }
+    }
+
+    .static {
+        display: inline-block;
+        position: relative;
+        width: 100px;
+        line-height: 100px;
+        border-radius: 50%;
+        background: yellowgreen;
+        background-image: linear-gradient(to right, transparent 50%, #655 0);
+        color: transparent;
+        text-align: center;
+    }
+
+    .static::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        border-radius: 0 100% 100% 0 / 50%;
+        background-color: inherit;
+        transform-origin: left;
+        animation: spin 50s linear infinite, bg 100s step-end infinite;
+        animation-play-state: paused;
+        animation-delay: inherit;
+    }
+</style>
