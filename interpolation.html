@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
+<style>
+    @keyframes foo {
+        from {
+            background: red
+        }
+
+        to {
+            background: greenyellow
+        }
+    }
+
+    div {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        animation: foo 1s both linear;
+        animation-play-state: paused;
+    }
+
+    div:nth-of-type(2) {
+        animation-delay: -.2s;
+    }
+
+    div:nth-of-type(3) {
+        animation-delay: -.4s;
+    }
+
+    div:nth-of-type(4) {
+        animation-delay: -.6s;
+    }
+
+    div:nth-of-type(5) {
+        animation-delay: -.8s;
+    }
+
+    div:nth-of-type(6) {
+        animation-delay: -1s;
+    }
+</style>

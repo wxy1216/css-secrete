@@ -11,6 +11,9 @@
     <div class="static" style="animation-delay: -40s;">40%</div>
     <div class="static" style="animation-delay: -60s;">60%</div>
     <div class="static" style="animation-delay: -80s;">80%</div>
+    <div class="svg">20%</div>
+    <div class="svg">60%</div>
+    <div class="svg animation">0%</div>
 </body>
 
 </html>
@@ -73,4 +76,57 @@
         animation-play-state: paused;
         animation-delay: inherit;
     }
+
+    .svg {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        margin: 10px;
+        transform: rotate(-90deg);
+    }
+
+    svg {
+        background: yellowgreen;
+        border-radius: 50%;
+    }
+
+    circle {
+        fill: yellowgreen;
+        stroke: #655;
+        stroke-width: 32;
+    }
+
+    @keyframes grow {
+        to {
+            stroke-dasharray: 100 100;
+        }
+    }
+
+    .svg.animation circle {
+        animation: grow 2s infinite linear;
+    }
 </style>
+<script>
+    function $$(selector, context) {
+        context = context || document;
+        var elements = context.querySelectorAll(selector);
+        return Array.prototype.slice.call(elements);
+    }
+    $$('.svg').forEach(function (pie) {
+        var p = parseFloat(pie.textContent);
+        var NS = "http://www.w3.org/2000/svg";
+        var svg = document.createElementNS(NS, "svg");
+        var circle = document.createElementNS(NS, "circle");
+        var title = document.createElementNS(NS, "title");
+        circle.setAttribute("r", 16);
+        circle.setAttribute("cx", 16);
+        circle.setAttribute("cy", 16);
+        circle.setAttribute("stroke-dasharray", p + " 100");
+        svg.setAttribute("viewBox", "0 0 32 32");
+        title.textContent = pie.textContent;
+        pie.textContent = '';
+        svg.appendChild(title);
+        svg.appendChild(circle);
+        pie.appendChild(svg);
+    });
+</script>
